@@ -36,10 +36,15 @@ int gcd2recursive(int a, int b)
     gcd2recursive(b, a % b);
 }
 
+int lcm(int a, int b, int gcd)
+{
+    return abs(a * b) / gcd;
+}
+
 int main()
 {
-    int a = 54;
-    int b = 24;
+    int a = 12;
+    int b = 18;
     int result = gcd(a, b);
     cout << "gcd: " << result << endl;
 
@@ -48,4 +53,7 @@ int main()
 
     int res3 = gcd2recursive(a, b);
     cout << "gcd recursive: " << res3 << endl;
+
+    int lcm_ = lcm(a, b, res3);
+    cout << "lcm: " << lcm_ << endl;
 }
